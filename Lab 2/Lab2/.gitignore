@@ -15,6 +15,10 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+target
+mvnw
+mvnw.cmd
+.mvn/wrapper
 *.iws
 *.iml
 *.ipr
