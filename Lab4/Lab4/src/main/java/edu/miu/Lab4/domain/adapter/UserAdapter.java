@@ -1,7 +1,7 @@
-package edu.miu.Lab3.domain.adapter;
+package edu.miu.Lab4.domain.adapter;
 
-import edu.miu.Lab3.domain.User;
-import edu.miu.Lab3.domain.dto.UserDTO;
+import edu.miu.Lab4.domain.User;
+import edu.miu.Lab4.domain.dto.UserDTO;
 
 public class UserAdapter {
     public static User getUserDTO(UserDTO userDTO){

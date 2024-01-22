@@ -1,10 +1,10 @@
-package edu.miu.Lab3.service.imp;
+package edu.miu.Lab4.service.imp;
 
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.adapter.PostAdapter;
-import edu.miu.Lab3.domain.dto.PostDTO;
-import edu.miu.Lab3.repository.PostRepository;
-import edu.miu.Lab3.service.PostService;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.adapter.PostAdapter;
+import edu.miu.Lab4.domain.dto.PostDTO;
+import edu.miu.Lab4.repository.PostRepository;
+import edu.miu.Lab4.service.PostService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

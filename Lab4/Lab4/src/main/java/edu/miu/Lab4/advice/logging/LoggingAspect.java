@@ -3,6 +3,8 @@ package edu.miu.Lab4.advice.logging;
 import edu.miu.Lab4.domain.Logger;
 import edu.miu.Lab4.repository.LoggerRepository;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
@@ -20,11 +22,8 @@ public class LoggingAspect {
         this.loggerRepository = loggerRepository;
     }
 
-    @Pointcut("execution(* edu.miu.Lab4.service.*.*(..))")
-    private void serviceMethods() {
-    }
-
-    public void logServiceMethod(JoinPoint joinPoint, Object result){
+    @After("execution(* edu.miu.Lab4.service.*.*(..))")
+    public void logServiceMethod(JoinPoint joinPoint){
         String methodName = joinPoint.getSignature().getName();
         String principle = "FakeStaticUser";
 

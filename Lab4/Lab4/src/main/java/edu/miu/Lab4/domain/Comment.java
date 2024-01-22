@@ -1,4 +1,4 @@
-package edu.miu.Lab3.domain;
+package edu.miu.Lab4.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

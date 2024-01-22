@@ -1,6 +1,7 @@
-package edu.miu.Lab3.domain.dto;
+package edu.miu.Lab4.domain.dto;
 
-import edu.miu.Lab3.domain.Post;
+
+import edu.miu.Lab4.domain.Post;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

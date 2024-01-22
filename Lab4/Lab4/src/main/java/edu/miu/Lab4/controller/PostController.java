@@ -1,8 +1,8 @@
-package edu.miu.Lab3.controller;
+package edu.miu.Lab4.controller;
 
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.dto.PostDTO;
-import edu.miu.Lab3.service.PostService;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.dto.PostDTO;
+import edu.miu.Lab4.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package edu.miu.Lab3.repository;
+package edu.miu.Lab4.repository;
 
 
-import edu.miu.Lab3.domain.Post;
+import edu.miu.Lab4.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

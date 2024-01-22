@@ -1,6 +1,7 @@
-package edu.miu.Lab3.service.imp;
+package edu.miu.Lab4.service.imp;
 
-import edu.miu.Lab3.service.CommentService;
+
+import edu.miu.Lab4.service.CommentService;
 
 public class CommentServiceImp implements CommentService {
 }

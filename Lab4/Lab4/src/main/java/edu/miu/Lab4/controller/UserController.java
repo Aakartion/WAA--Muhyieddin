@@ -1,10 +1,10 @@
-package edu.miu.Lab3.controller;
+package edu.miu.Lab4.controller;
 
-import edu.miu.Lab3.domain.Comment;
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.User;
-import edu.miu.Lab3.domain.dto.UserDTO;
-import edu.miu.Lab3.service.UserService;
+import edu.miu.Lab4.domain.Comment;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.User;
+import edu.miu.Lab4.domain.dto.UserDTO;
+import edu.miu.Lab4.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

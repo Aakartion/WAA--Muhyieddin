@@ -1,4 +1,4 @@
-package edu.miu.Lab3.controller;
+package edu.miu.Lab4.controller;
 
 public class CommentController {
 }

@@ -1,10 +1,9 @@
-package edu.miu.Lab3.service;
+package edu.miu.Lab4.service;
 
-import edu.miu.Lab3.domain.Comment;
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.User;
-import edu.miu.Lab3.domain.dto.UserDTO;
-import org.springframework.web.bind.annotation.PathVariable;
+import edu.miu.Lab4.domain.Comment;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.User;
+import edu.miu.Lab4.domain.dto.UserDTO;
 
 import java.util.List;
 

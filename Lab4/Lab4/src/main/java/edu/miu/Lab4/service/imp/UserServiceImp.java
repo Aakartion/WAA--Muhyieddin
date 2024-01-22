@@ -1,12 +1,13 @@
-package edu.miu.Lab3.service.imp;
+package edu.miu.Lab4.service.imp;
 
-import edu.miu.Lab3.domain.Comment;
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.User;
-import edu.miu.Lab3.domain.adapter.UserAdapter;
-import edu.miu.Lab3.domain.dto.UserDTO;
-import edu.miu.Lab3.repository.UserRepository;
-import edu.miu.Lab3.service.UserService;
+import edu.miu.Lab4.advice.execution.ExecutionTime;
+import edu.miu.Lab4.domain.Comment;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.User;
+import edu.miu.Lab4.domain.adapter.UserAdapter;
+import edu.miu.Lab4.domain.dto.UserDTO;
+import edu.miu.Lab4.repository.UserRepository;
+import edu.miu.Lab4.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class UserServiceImp implements UserService {
         userRepository.save(user);
     }
 
+    @ExecutionTime
     public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }

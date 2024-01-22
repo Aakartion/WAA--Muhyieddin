@@ -1,7 +1,7 @@
-package edu.miu.Lab3.service;
+package edu.miu.Lab4.service;
 
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.dto.PostDTO;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.dto.PostDTO;
 
 import java.util.List;
 

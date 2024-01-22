@@ -1,4 +1,4 @@
-package edu.miu.Lab3.service;
+package edu.miu.Lab4.service;
 
 public interface CommentService {
 }

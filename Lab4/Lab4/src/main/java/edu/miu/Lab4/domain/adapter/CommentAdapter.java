@@ -1,7 +1,7 @@
-package edu.miu.Lab3.domain.adapter;
+package edu.miu.Lab4.domain.adapter;
 
-import edu.miu.Lab3.domain.Comment;
-import edu.miu.Lab3.domain.dto.CommentDTO;
+import edu.miu.Lab4.domain.Comment;
+import edu.miu.Lab4.domain.dto.CommentDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,11 +1,11 @@
-package edu.miu.Lab3.databaseLoader;
+package edu.miu.Lab4.databaseLoader;
 
-import edu.miu.Lab3.domain.Comment;
-import edu.miu.Lab3.domain.Post;
-import edu.miu.Lab3.domain.User;
-import edu.miu.Lab3.repository.CommentRepository;
-import edu.miu.Lab3.repository.PostRepository;
-import edu.miu.Lab3.repository.UserRepository;
+import edu.miu.Lab4.domain.Comment;
+import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.User;
+import edu.miu.Lab4.repository.CommentRepository;
+import edu.miu.Lab4.repository.PostRepository;
+import edu.miu.Lab4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
