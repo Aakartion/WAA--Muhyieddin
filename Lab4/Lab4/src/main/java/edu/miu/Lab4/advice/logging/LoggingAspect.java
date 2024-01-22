@@ -2,6 +2,7 @@ package edu.miu.Lab4.advice.logging;
 
 import edu.miu.Lab4.domain.Logger;
 import edu.miu.Lab4.repository.LoggerRepository;
+import edu.miu.Lab4.utility.Utility;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -28,15 +29,11 @@ public class LoggingAspect {
         String principle = "FakeStaticUser";
 
         Logger logger = new Logger();
-        logger.setTransactionId(generateTransactionId());
+        logger.setTransactionId(Utility.generateTransactionId());
         logger.setDate(LocalDate.now());
         logger.setTime(LocalTime.now());
         logger.setPrinciple(principle);
         logger.setOperation(methodName);
         loggerRepository.save(logger);
-    }
-
-    public String generateTransactionId(){
-        return LocalDateTime.now().toString();
     }
 }

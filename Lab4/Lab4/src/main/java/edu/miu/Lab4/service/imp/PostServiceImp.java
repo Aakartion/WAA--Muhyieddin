@@ -62,4 +62,9 @@ public class PostServiceImp implements PostService {
     public List<Post> findByGivenTitle(String title) {
         return postRepository.findByTitle(title);
     }
+
+    @Override
+    public void createException() {
+        throw new RuntimeException("This is a simulated exception.");
+    }
 }

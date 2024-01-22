@@ -18,4 +18,6 @@ public interface PostService {
     List<Post> findByAuthorName(String author);
 
     List<Post> findByGivenTitle(String title);
+
+    void createException();
 }

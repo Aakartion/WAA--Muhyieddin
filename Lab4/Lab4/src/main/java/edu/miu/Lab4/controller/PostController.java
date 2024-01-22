@@ -59,4 +59,10 @@ public class PostController {
     public List<Post> findAllPostFromGivenTitle(@PathVariable String title){
         return postService.findByGivenTitle(title);
     }
+
+    @GetMapping("/createException")
+    public ResponseEntity<String> createException(){
+        postService.createException();
+        return new ResponseEntity<>("Exception is created", HttpStatus.OK);
+    }
 }
