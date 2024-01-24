@@ -2,6 +2,7 @@ package edu.miu.Lab4.databaseLoader;
 
 import edu.miu.Lab4.domain.Comment;
 import edu.miu.Lab4.domain.Post;
+import edu.miu.Lab4.domain.Role;
 import edu.miu.Lab4.domain.User;
 import edu.miu.Lab4.repository.CommentRepository;
 import edu.miu.Lab4.repository.PostRepository;
@@ -46,8 +47,16 @@ public class DataLoader implements CommandLineRunner {
         postList1.add(p2);
         postList2.add(p3);
         postList2.add(p4);
-        User u1 = new User(1L,"Anne Frank", postList1);
-        User u2 = new User(209245890L,"Leonel Messi", postList2);
+        Role r1 = new Role(1,"Admin");
+        Role r2 = new Role(1,"User");
+        List<Role> roleList1 = new ArrayList<>();
+        List<Role> roleList2 = new ArrayList<>();
+        roleList1.add(r1);
+        roleList2.add(r1);
+        roleList2.add(r2);
+
+        User u1 = new User(1L,"Anne Frank", postList1,roleList1);
+        User u2 = new User(209245890L,"Leonel Messi", postList2, roleList2);
         userRepository.save(u1);
         userRepository.save(u2);
     }

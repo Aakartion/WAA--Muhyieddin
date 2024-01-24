@@ -8,7 +8,8 @@ public class UserAdapter {
         return new User(
                 userDTO.getId(),
                 userDTO.getName(),
-                userDTO.getPosts()
+                userDTO.getPosts(),
+                userDTO.getRole()
         );
     }
 
@@ -16,7 +17,8 @@ public class UserAdapter {
         return new UserDTO(
                 user.getId(),
                 user.getName(),
-                user.getPosts()
+                user.getPosts(),
+                user.getRoles()
         );
     }
 }
