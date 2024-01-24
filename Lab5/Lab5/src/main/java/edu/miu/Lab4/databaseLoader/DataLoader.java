@@ -7,6 +7,8 @@ import edu.miu.Lab4.domain.User;
 import edu.miu.Lab4.repository.CommentRepository;
 import edu.miu.Lab4.repository.PostRepository;
 import edu.miu.Lab4.repository.UserRepository;
+import jakarta.persistence.*;
+import org.hibernate.annotations.BatchSize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,11 +20,7 @@ import java.util.List;
 public class DataLoader implements CommandLineRunner {
 
     @Autowired
-    private PostRepository postRepository;
-    @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private CommentRepository commentRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -55,8 +53,8 @@ public class DataLoader implements CommandLineRunner {
         roleList2.add(r1);
         roleList2.add(r2);
 
-        User u1 = new User(1L,"Anne Frank", postList1,roleList1);
-        User u2 = new User(209245890L,"Leonel Messi", postList2, roleList2);
+        User u1 = new User(1L,"Anne Frank", "123",roleList1,postList1);
+        User u2 = new User(1L,"Janne Frank", "223",roleList2,postList2);
         userRepository.save(u1);
         userRepository.save(u2);
     }

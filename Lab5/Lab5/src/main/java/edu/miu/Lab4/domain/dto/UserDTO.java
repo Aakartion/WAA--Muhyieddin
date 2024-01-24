@@ -2,7 +2,6 @@ package edu.miu.Lab4.domain.dto;
 
 
 import edu.miu.Lab4.domain.Post;
-import edu.miu.Lab4.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +15,4 @@ public class UserDTO {
     private long id;
     private String name;
     private List<Post> posts;
-    private List<Role> role;
 }

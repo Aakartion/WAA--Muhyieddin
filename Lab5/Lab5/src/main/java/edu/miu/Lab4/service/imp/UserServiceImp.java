@@ -4,30 +4,30 @@ import edu.miu.Lab4.advice.execution.ExecutionTime;
 import edu.miu.Lab4.domain.Comment;
 import edu.miu.Lab4.domain.Post;
 import edu.miu.Lab4.domain.User;
-import edu.miu.Lab4.domain.adapter.UserAdapter;
 import edu.miu.Lab4.domain.dto.UserDTO;
 import edu.miu.Lab4.repository.UserRepository;
 import edu.miu.Lab4.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
 
-    public UserServiceImp(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
     public void addUser(UserDTO userDTO) {
-        User user = UserAdapter.getUserDTO(userDTO);
+        User user = modelMapper.map(userDTO, User.class);
         userRepository.save(user);
     }
 
