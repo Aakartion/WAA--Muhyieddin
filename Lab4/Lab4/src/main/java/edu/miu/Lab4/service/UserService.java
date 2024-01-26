@@ -13,6 +13,8 @@ public interface UserService {
     void addUser(UserDTO userDTO);
     User getUserById(Long id);
 
+
+
     List<Post> getAllPostFromUser(Long id);
 
     List<User> findGreaterThan(int num);

@@ -5,13 +5,10 @@ import edu.miu.Lab4.repository.LoggerRepository;
 import edu.miu.Lab4.utility.Utility;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Aspect
@@ -24,7 +21,7 @@ public class LoggingAspect {
     }
 
     @After("execution(* edu.miu.Lab4.service.*.*(..))")
-    public void logServiceMethod(JoinPoint joinPoint){
+    public void logServiceMethod(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
         String principle = "FakeStaticUser";
 
