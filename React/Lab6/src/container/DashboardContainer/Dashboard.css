@@ -1,13 +1,24 @@
-.postContainer{
-    display:flex;
-    justify-content:center;
-    
-}
+/* Dashboard.css */
 
-#postId{
-    background-color: beige;
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  input {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for individual post */
+  .post-container {
     margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-
-}
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+  }
+  

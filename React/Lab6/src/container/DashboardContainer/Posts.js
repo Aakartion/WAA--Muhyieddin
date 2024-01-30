@@ -3,10 +3,12 @@ import Post from "./Post";
 
 const Posts = ({ posts }) => {
   return (
-    <div>
+    <div className="posts-container">
       <h2>Posts</h2>
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        <div key={post.id} className="post-container">
+          <Post post={post} />
+        </div>
       ))}
     </div>
   );

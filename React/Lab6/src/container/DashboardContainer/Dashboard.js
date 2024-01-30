@@ -16,7 +16,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className="dashboard-container">
       <h1>Lab6 Application</h1>
       <Posts posts={posts} />
       <input
