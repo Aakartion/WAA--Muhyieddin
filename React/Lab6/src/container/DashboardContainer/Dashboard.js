@@ -1,48 +1,31 @@
-import Post from "../PostContainer/Post";
-import { useState } from "react";
+import React, { useState } from "react";
+import Posts from "./Posts";
+import "./Dashboard.css";
 
-function Dashboard() {
-  const [inputValue, setInputValue] = useState("");
+const Dashboard = () => {
+  const [posts, setPosts] = useState([
+    { id: 111, title: "Happiness", author: "John" },
+    { id: 112, title: "MIU", author: "Dean" },
+    { id: 113, title: "Enjoy Life", author: "Jasmine" },
+  ]);
 
-  const handleButtonClick = () => {
-    console.log("The text is: ", inputValue);
+  const updateFirstPostTitle = (newTitle) => {
+    const updatedPosts = [...posts];
+    updatedPosts[0].title = newTitle;
+    setPosts(updatedPosts);
   };
-
-  // const handleInputChange = (e) => {
-  //   setInputValue(e.target.value);
-  // };
-
-  // const [firstPostTitle, setFirstPostTitle] = useState("First Post Title");
-
-  // const handleUpdateTitle = (e) => {
-  //   setFirstPostTitle(e.target.value);
-  // };
-
-  // return (
-  //   <div>
-  //     <Post />
-  //     <input
-  //       type="text"
-  //       onChange={handleUpdateTitle}
-  //       value={firstPostTitle}
-  //       placeholder="Type Something . . . "
-  //     />
-  //     <button>Button</button>
-  //   </div>
-  // );
 
   return (
     <div>
-      <Post />
+      <h1>Lab6 Application</h1>
+      <Posts posts={posts} />
       <input
         type="text"
-        // onChange={handleInputChange}
-        value={inputValue}
-        placeholder="Type Something . . . "
-      ></input>
-      <button onClick={handleButtonClick}>Button</button>
+        placeholder="New Title"
+        onChange={(e) => updateFirstPostTitle(e.target.value)}
+      />
     </div>
   );
-}
+};
 
 export default Dashboard;
