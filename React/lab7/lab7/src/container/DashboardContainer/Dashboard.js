@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Posts from "../../components/Posts";
+import Posts from "../../components/Post/Posts";
 import "./Dashboard.css";
 import "./InputField.css";
 import axios from "axios";
-import PostDetails from "../../components/PostDetails";
+import PostDetails from "../../components/Post/PostDetails";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
@@ -22,6 +22,13 @@ const Dashboard = () => {
     fetchPosts();
   }, []);
 
+  const onDeletePost = (deletedPostId) => {
+    setPosts((prevPosts) =>
+      prevPosts.filter((post) => post.id !== deletedPostId)
+    );
+    setSelectedPostId(null);
+  };
+
   const updateFirstPostTitle = (newTitle) => {
     const updatedPosts = [...posts];
     updatedPosts[0].title = newTitle;
@@ -30,7 +37,7 @@ const Dashboard = () => {
 
   const onSelectPost = (postId) => {
     const post = posts.find((p) => p.id === postId);
-    setSelectedPostId(post);
+    setSelectedPostId(post.id);
   };
 
   return (
@@ -48,7 +55,13 @@ const Dashboard = () => {
         placeholder="New Title"
         onChange={(e) => updateFirstPostTitle(e.target.value)}
       />
-      {selectedPostId && <PostDetails postId={selectedPostId} />}
+      {selectedPostId && (
+        <PostDetails
+          postId={selectedPostId}
+          onDeletePost={onDeletePost}
+          onClose={() => setSelectedPostId(null)}
+        />
+      )}
     </div>
   );
 };
