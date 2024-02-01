@@ -4,10 +4,12 @@ import "./Dashboard.css";
 import "./InputField.css";
 import axios from "axios";
 import PostDetails from "../../components/Post/PostDetails";
+import AddPost from "../../components/Add/AddPost";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
+  const [isAddPostOpen, setIsAddPostOpen] = useState(false);
 
   const fetchPosts = async () => {
     try {
@@ -21,6 +23,11 @@ const Dashboard = () => {
   useEffect(() => {
     fetchPosts();
   }, []);
+
+  const onAddPost = (newPost) => {
+    setPosts((prevPosts) => [...prevPosts, newPost]);
+    setIsAddPostOpen(false); // Close the AddPost component
+  };
 
   const onDeletePost = (deletedPostId) => {
     setPosts((prevPosts) =>
@@ -43,6 +50,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <h1>Lab7 Application</h1>
+      <button onClick={() => setIsAddPostOpen(true)}>Add Post</button>
       <Posts
         posts={posts}
         updateFirstPostTitle={updateFirstPostTitle}
@@ -60,6 +68,12 @@ const Dashboard = () => {
           postId={selectedPostId}
           onDeletePost={onDeletePost}
           onClose={() => setSelectedPostId(null)}
+        />
+      )}
+      {isAddPostOpen && (
+        <AddPost
+          onAddPost={onAddPost}
+          onClose={() => setIsAddPostOpen(false)}
         />
       )}
     </div>
