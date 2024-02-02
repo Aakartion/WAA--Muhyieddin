@@ -1,5 +1,6 @@
 package edu.miu.Lab4.controller;
 
+import edu.miu.Lab4.domain.Comment;
 import edu.miu.Lab4.domain.Post;
 import edu.miu.Lab4.domain.dto.PostDTO;
 import edu.miu.Lab4.service.PostService;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -65,5 +67,10 @@ public class PostController {
     public ResponseEntity<String> createException(){
         postService.createException();
         return new ResponseEntity<>("Exception is created", HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/comments")
+    public List<Comment> getCommentList(@PathVariable Long id){
+        return List.of(new Comment(1,"Some comment"));
     }
 }
