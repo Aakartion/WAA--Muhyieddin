@@ -1,0 +1,14 @@
+.inputFiled{
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 300px; /* Adjust the width as needed */
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color 0.1s;
+  }
+  
+  .inputFiled:hover {
+    border-color: #2980b9;
+  }
