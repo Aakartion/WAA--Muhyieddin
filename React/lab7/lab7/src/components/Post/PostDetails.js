@@ -1,15 +1,11 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PostDetails.css";
 import Comment from "./../Commnet/Comment";
-import { PostContext } from "../context/PostContext";
 
-const PostDetails = ({ onDeletePost, onClose }) => {
+const PostDetails = ({ postId, onDeletePost, onClose }) => {
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
-  const postId = useContext(PostContext);
-
-  console.log(comments);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -39,7 +35,6 @@ const PostDetails = ({ onDeletePost, onClose }) => {
           `http://localhost:8080/api/v1/posts/${postId}/comments`
         );
         setComments(commentsResponse.data);
-        console.log("*********", commentsResponse.data);
       } catch (error) {
         console.error("Error fetching post details and comments:", error);
       }

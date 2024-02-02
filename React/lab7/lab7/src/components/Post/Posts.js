@@ -6,9 +6,9 @@ const Posts = ({ posts, onSelectPost }) => {
     <div>
       <h2>Posts</h2>
       <div className="posts-container">
-        {posts.map((post, key) => (
+        {posts.map((post) => (
           <div
-            key={key}
+            key={post.id}
             className="post-container"
             onClick={() => onSelectPost(post.id)}
           >

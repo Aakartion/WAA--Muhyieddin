@@ -5,11 +5,14 @@ import "./InputField.css";
 import axios from "axios";
 import PostDetails from "../../components/Post/PostDetails";
 import AddPost from "../../components/Add/AddPost";
+import { PostContext } from "../../components/context/PostContext";
 
 const Dashboard = () => {
   const [posts, setPosts] = useState([]);
   const [selectedPostId, setSelectedPostId] = useState(null);
   const [isAddPostOpen, setIsAddPostOpen] = useState(false);
+
+  const [flag, setFlag] = useState(false);
 
   const fetchPosts = async () => {
     try {
@@ -22,7 +25,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [flag]);
 
   const onAddPost = (newPost) => {
     setPosts((prevPosts) => [...prevPosts, newPost]);
@@ -49,33 +52,36 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h1>Lab7 Application</h1>
-      <button onClick={() => setIsAddPostOpen(true)}>Add Post</button>
-      <Posts
-        posts={posts}
-        updateFirstPostTitle={updateFirstPostTitle}
-        onSelectPost={onSelectPost}
-      />
-      <h3>Provide your input</h3>
-      <input
-        className="inputFiled"
-        type="text"
-        placeholder="New Title"
-        onChange={(e) => updateFirstPostTitle(e.target.value)}
-      />
-      {selectedPostId && (
-        <PostDetails
-          postId={selectedPostId}
-          onDeletePost={onDeletePost}
-          onClose={() => setSelectedPostId(null)}
+      <PostContext.Provider value={selectedPostId}>
+        <h1>Lab7 Application</h1>
+        <button onClick={() => setIsAddPostOpen(true)}>Add Post</button>
+        <Posts
+          posts={posts}
+          updateFirstPostTitle={updateFirstPostTitle}
+          onSelectPost={onSelectPost}
         />
-      )}
-      {isAddPostOpen && (
-        <AddPost
-          onAddPost={onAddPost}
-          onClose={() => setIsAddPostOpen(false)}
+        <h3>Provide your input</h3>
+        <input
+          className="inputFiled"
+          type="text"
+          placeholder="New Title"
+          onChange={(e) => updateFirstPostTitle(e.target.value)}
         />
-      )}
+        {selectedPostId && (
+          <PostDetails
+            postId={selectedPostId}
+            onDeletePost={onDeletePost}
+            onClose={() => setSelectedPostId(null)}
+          />
+        )}
+        {isAddPostOpen && (
+          <AddPost
+            setFlag={setFlag}
+            onAddPost={onAddPost}
+            onClose={() => setIsAddPostOpen(false)}
+          />
+        )}
+      </PostContext.Provider>
     </div>
   );
 };
